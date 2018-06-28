@@ -43,7 +43,7 @@ namespace CONTRIBE.BOOKSTORE.SERVICES
                 var booksAsync = await new BookStoreHelper().SearchBooksAsync(searchString);
                 books = booksAsync;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // Log the exception
             }
