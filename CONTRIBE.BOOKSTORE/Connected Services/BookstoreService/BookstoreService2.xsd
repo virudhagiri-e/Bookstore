@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CONTRIBE.BOOKSTORE.MODEL.Entity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CONTRIBE.BOOKSTORE.MODEL.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Book">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Author" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InStock" type="xs:int" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Book" nillable="true" type="tns:Book" />
+  <xs:complexType name="BookCart">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BookCartItems" nillable="true" type="tns:ArrayOfBookCartItem" />
+      <xs:element minOccurs="0" name="TotalPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalQuantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BookCart" nillable="true" type="tns:BookCart" />
+  <xs:complexType name="ArrayOfBookCartItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BookCartItem" nillable="true" type="tns:BookCartItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBookCartItem" nillable="true" type="tns:ArrayOfBookCartItem" />
+  <xs:complexType name="BookCartItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Book" nillable="true" type="tns:Book" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BookCartItem" nillable="true" type="tns:BookCartItem" />
+  <xs:complexType name="OrderDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NotInStockBooks" nillable="true" type="tns:ArrayOfBookCartItem" />
+      <xs:element minOccurs="0" name="PurchasedBooks" nillable="true" type="tns:ArrayOfBookCartItem" />
+      <xs:element minOccurs="0" name="TotalPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalQuantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderDetails" nillable="true" type="tns:OrderDetails" />
+  <xs:complexType name="ArrayOfOrderDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderDetails" nillable="true" type="tns:OrderDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderDetails" nillable="true" type="tns:ArrayOfOrderDetails" />
+</xs:schema>

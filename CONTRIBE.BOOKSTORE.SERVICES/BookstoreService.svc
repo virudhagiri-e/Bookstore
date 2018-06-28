@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="CONTRIBE.BOOKSTORE.SERVICES.BookstoreService" CodeBehind="BookstoreService.svc.cs" %>

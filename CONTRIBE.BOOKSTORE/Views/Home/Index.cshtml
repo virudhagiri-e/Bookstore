@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<form>
+    <div style="float:right">
+        <p id="loggedIn" style="display: none">
+            <span id="userId">Logged in as</span>
+            <span id="userId"></span>
+            <a id="btnLogout" href="#" title="Log out">Log out</a>
+        </p>
+        <p id="notLoggedIn">
+            <span id="userId">Enter UserId:</span>
+            <input type="text" id="txtLogin" size="10" maxlength="10" />
+            <a id="btnLogin" href="#" title="Log in">Log in</a>
+        </p>
+    </div>
+    <div style="float:left">
+        <div>
+            <h3>Search Books</h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Title:</td>
+                        <td><input id="txtTitleSearch" type="text" title="Enter Title" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input id="rdbtnAnd" type="radio" value="&&" name="rdbtnAndOr" /> And
+                            <input id="rdbtnOr" type="radio" value="||" name="rdbtnAndOr" checked="checked" /> Or
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Author:</td>
+                        <td><input id="txtAuthorSearch" type="text" title="Enter Author" /></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input id="btnSearch" type="submit" value="Search" />
+                        </td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="searchResultsDivId">
+            <h4>Search Results</h4>
+            <table id="tblSearchResult" border="1">
+                <thead><tr><th>S.No</th><th>Author</th><th>Title</th><th>Price</th><th></th></tr></thead>
+                <tbody></tbody>
+            </table>
+            <p>&nbsp;</p>
+        </div>
+        <div id="bookCartDivId" style="display: none">
+            <h4>Book Cart</h4>
+            <table id="tblBookCart" border="1">
+                <thead><tr><th>S.No</th><th>Author</th><th>Title</th><th>Price</th><th>Quantity</th><th></th></tr></thead>
+                <tbody></tbody>
+            </table>
+            <div>
+                <br />
+                <input id="btnPlaceOrder" style="display:none" type="button" value="Place Order" />
+            </div>
+            <br />
+        </div>
+        <div id="orderDetailsDivId" style="display: none">
+            <h4>Order Details</h4>
+            <table id="tblOrderDetails" border="1">
+                <thead><tr><th>S.No</th><th>Author</th><th>Title</th><th>Price</th><th>Quantity</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;">
+        <img src='~/Content/loading.gif' width="64" height="64" /><br>Loading..
+    </div>
+</form>
